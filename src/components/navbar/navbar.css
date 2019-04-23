@@ -14,3 +14,34 @@
     font-family: Brush Script MT, Brush Script Std, cursive;
     font-size: 1.7rem;
 }
+
+.nav__menu a {
+    position: relative;
+    margin-left: 1rem;
+    color: #fff;
+    transition: all .3s ease-in-out;
+    font-weight: lighter;
+}
+
+.nav__menu a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #620085;
+    transition: width .2s ease-in-out;
+}
+
+.nav__menu a:hover::before {
+    width: 100%;
+}
+
+.nav__menu a:first-child {
+    margin-left: 0;
+}
+
+.activeLink {
+    color: #620085 !important;
+}

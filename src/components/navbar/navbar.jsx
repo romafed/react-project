@@ -13,9 +13,9 @@ class Navbar extends Component {
                 </div>
                 <div className='nav__menu'>
                     <ul>
-                        <NavLink to='/todo' >Todo</NavLink>
-                        <NavLink to='/some' >Some</NavLink>
-                        <NavLink to='/table' >Table</NavLink>
+                        <NavLink activeClassName='activeLink' to='/todo' >Todo</NavLink>
+                        <NavLink activeClassName='activeLink' to='/some' >Some</NavLink>
+                        <NavLink activeClassName='activeLink' to='/table' >Table</NavLink>
                     </ul>
                 </div>
             </nav>
