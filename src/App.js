@@ -1,25 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch, Redirect } from 'react-router-dom'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+
+import Navbar from './components/navbar/navbar';
+import Someapp from './components/someapp/someapp';
+import Tableapp from './components/tableapp/tableapp';
+import Todoapp from './components/todoapp/todoapp';
 import './App.css';
 
-function App() {
+function App({ location }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reloads.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <React.Fragment>
+
+      <header>
+        <Navbar />
       </header>
-    </div>
+
+      <section>
+        <TransitionGroup>
+          <CSSTransition
+            key={location.key}
+            timeout={1000}
+            classNames='fade'
+          >
+            <Switch location={{ ...location }}>
+              <Route strict path={['/todo', '/']} exact component={Todoapp} />
+              <Route path='/some' component={Someapp} />
+              <Route path='/table' component={Tableapp} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+      </section>
+
+    </React.Fragment>
   );
 }
 
