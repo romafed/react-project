@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './navbar.css';
-
 class Navbar extends Component {
-    state = {}
+    state = {
+
+    }
     render() {
         return (
-            <nav>
+            <nav className='nav'>
                 <div className="nav__logo">
-                    <Link to='/todo'>Logo</Link>
+                    <Link to='/todo'>Progect</Link>
                 </div>
                 <div className='nav__menu'>
                     <ul>
