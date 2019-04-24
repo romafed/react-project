@@ -13,18 +13,19 @@
 
 .nav__logo a {
     font-family: Brush Script MT, Brush Script Std, cursive;
-    font-size: 1.7rem;
+    font-size: 1.7rem;    
+    color: #620085;
 }
 
 .nav_icon {
     display: none !important;
-    transform: scale(1);
+    transform: scale(1.3);
     transition: all .2s ease-in-out;
 }
 
 .nav_icon:hover {
     color: #620085;
-    transform: scale(1.3);
+    transform: scale(1.8);
 }
 
 .nav__menu a {

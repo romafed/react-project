@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Spring, Trail, config } from 'react-spring/renderprops';
+import { Spring, Trail } from 'react-spring/renderprops';
 
 import './backbar.css'
 
@@ -30,7 +30,7 @@ const Backbar = ({ menuText, show, onCloseMenu }) => {
                                 to={{
                                     transform: show ? 'translateX(0)' : 'translateX(-300%)'
                                 }}
-                                config={{ mass: 4, tension: 170, friction: 26 }}
+                                config={{ mass: 3, tension: 170, friction: 26 }}
                             >
                                 {item => ({ transform }) => (
                                     <NavLink style={{ transform }} to={item.to} activeClassName='activeLink' >

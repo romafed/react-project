@@ -19,7 +19,8 @@
 
 .backbar__logo a {
     font-family: Brush Script MT, Brush Script Std, cursive;
-    font-size: 1.7rem;
+    font-size: 3rem;
+    color: #620085;
 }
 
 .backbar__menu {
