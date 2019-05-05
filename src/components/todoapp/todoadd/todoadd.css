@@ -1,0 +1,45 @@
+.addtodo {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    transition: all .3s ease-in-out;
+}
+
+.addtodo__search {
+    width: 40%;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all .3s ease-in-out;
+    padding: 1rem;
+    color: #fff;
+    background-color: #000;
+    outline: none;
+}
+.addtodo__search:focus {
+    width: 100%;
+    border-top-right-radius: 0;
+}
+
+.addtodo__search::placeholder {
+    color: #fff;
+    transform: translateX(0) scale(1);
+    transition: all .3s ease-in-out;
+}
+
+.addtodo__search:focus.addtodo__search::placeholder {
+    transform: translateX(-50%) scale(0);
+}
+
+.addtodo__btn {
+    background: #000;
+    border: none;
+    border-top-right-radius: 10px;
+    outline: none;
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.addtodo__btn:hover {
+    color: #620085; 
+}

@@ -1,0 +1,15 @@
+.todo-link {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    transition: all .3s ease-in-out;
+    outline: none;
+}
+
+.activeTodoLink {
+    color: #620085;
+}
+
+.todo-link:disabled {
+    opacity: .3;
+}

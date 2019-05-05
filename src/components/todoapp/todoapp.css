@@ -1,0 +1,17 @@
+.todo-app {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, .2) !important;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media (min-width: 500px) {
+    .todo-app {
+        margin: 0 auto;
+        width: 50%;
+    }
+}

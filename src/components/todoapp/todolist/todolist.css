@@ -1,0 +1,24 @@
+.todo-list {
+    overflow-y: auto !important;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+}
+
+.todo-list ul {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.todo-list__empty {
+    margin: 0;
+    align-self: center;
+}
+
+.todo-absolute {
+    position: absolute;
+}
