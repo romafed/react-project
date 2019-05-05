@@ -1,5 +1,6 @@
 .todo-list {
     overflow-y: auto !important;
+    overflow-x: hidden;
     position: relative;
     width: 100%;
     display: flex;
