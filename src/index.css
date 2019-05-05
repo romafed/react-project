@@ -1,4 +1,4 @@
-body {
+body, html, #root {
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -7,8 +7,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to bottom right, #52007E, #000);
   color: #fff;
+}
+
+body {
+  background-image: linear-gradient(to bottom right, #52007E, #000);
 }
 
 *, *::before, *::after {
@@ -36,6 +39,7 @@ a, ul {
   padding: .5rem;
   right: 0;
   left: 0;
+  background-image: linear-gradient(to bottom right, #52007E, #000);
 }
 
 @media (max-width: 500px) {
