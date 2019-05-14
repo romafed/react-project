@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { getUser } from './../../http-modules/user-http';
+import TableContainer from './containers/tableContainer';
+import './tableapp.css';
 class Tableapp extends Component {
 
     async componentDidMount() {
@@ -15,7 +17,9 @@ class Tableapp extends Component {
     render() {
         return (
             <div className="page">
-                <h1>Table App</h1>
+                <div className='tableapp'>
+                    <TableContainer />
+                </div>
             </div>
         );
     }

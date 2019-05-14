@@ -1,0 +1,16 @@
+.main-table {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.main-table, td, th {
+    border: 2px solid #fff;
+    border-collapse: collapse;
+    padding: .4rem;
+}
+
+@media (max-width: 480px) {
+    .main-table {
+        width: 100%;
+    }
+}
