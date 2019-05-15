@@ -1,0 +1,26 @@
+.pagination {
+    width: 30%;
+    margin: 0.5rem 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination li {
+    background-color: black;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pagination li:hover {
+    color: #6E007F;
+}
+
+@media (max-width: 480px) {
+    .pagination {
+        width: 100%;
+    }
+}
