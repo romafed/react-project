@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Transition } from 'react-spring/renderprops';
 import './table.css';
 class Table extends Component {
 
@@ -19,12 +20,19 @@ class Table extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {posts.map(post => (
-                        <tr key={post.id} >
-                            <td>{post.title}</td>
-                            <td>{post.body}</td>
-                        </tr>
-                    ))}
+                    <Transition
+                        items={posts} keys={item => item.id}
+                        from={{ opacity: 0 }}
+                        enter={{ opacity: 1 }}
+                        leave={{ display: 'none', position: 'absolute' }}
+                    >
+                        {post => props => (
+                            <tr style={props}>
+                                <td>{post.title}</td>
+                                <td>{post.body}</td>
+                            </tr>
+                        )}
+                    </Transition>
                 </tbody>
             </table>
         );

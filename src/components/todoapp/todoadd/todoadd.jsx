@@ -1,36 +1,47 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTodo, filterTodosList } from '../../../Redux/Actions/todoActions';
+import { addTodo, filterTodosList, addValue } from '../../../Redux/Actions/todoActions';
 import { Filters } from './../../../Redux/types';
+import Search from '../../common/search/search';
 import './todoadd.css';
 
-const Todoadd = ({ addTodo, filterTodosList }) => {
-
-    let input;
+const Todoadd = ({ addTodo, filterTodosList, addValue, addValueP }) => {
 
     function hendelSubmit(e) {
         e.preventDefault();
-        if (input.value.trim() === '') return
-        addTodo(input.value);
+        if (addValueP.trim() === '') return
+        addTodo(addValueP);
         filterTodosList(Filters.ALL_TODOS);
-        input.value = '';
+        addValue('')
     }
 
+    function hendleValue(e) {
+        addValue(e.currentTarget.value)
+    }
+
+
     return (
-        <form className='addtodo' onSubmit={(e) => hendelSubmit(e)}>
-            <input className='addtodo__search' ref={inp => input = inp} type="text" placeholder='Add todo...' />
-            <button className='addtodo__btn' type='submit'>Add</button>
-        </form>
+        <Search
+            hendelSubmit={hendelSubmit}
+            hendleValue={hendleValue}
+            placeholder='Add todo...'
+            value={addValueP}
+        >
+            Add
+        </Search >
     );
 
 }
 
-
+const mapStateToProps = state => ({
+    addValueP: state.todoState.addValue
+});
 
 export default connect(
-    null,
+    mapStateToProps,
     {
         addTodo,
-        filterTodosList
+        filterTodosList,
+        addValue
     }
 )(Todoadd);

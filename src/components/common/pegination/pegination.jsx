@@ -1,7 +1,7 @@
 import React from 'react'
 import './pegination.css'
 
-const Peginating = ({ pageSize, postsLength, onPage }) => {
+const Peginating = ({ pageSize, postsLength, onPage, pageNumber }) => {
     const pages = Math.ceil(postsLength / pageSize);
     const pagesArr = [];
 
@@ -11,13 +11,18 @@ const Peginating = ({ pageSize, postsLength, onPage }) => {
 
     return (
         <ul className='pagination'>
-            {pagesArr.map(item => (
-                <li
-                    key={item}
-                    onClick={() => onPage(item)}
-                >
-                    {item}</li>
-            ))}
+            {pagesArr.map(item => {
+                const currentPageClassName = pageNumber === item ? 'paginationActive' : ''
+                return (
+                    <li
+                        className={currentPageClassName}
+                        key={item}
+                        onClick={() => onPage(item)}
+                    >
+                        {item}
+                    </li>
+                )
+            })}
         </ul>
     );
 }

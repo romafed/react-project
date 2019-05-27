@@ -2,13 +2,14 @@
     min-height: 100vh;
     width: 50%;
     background-color: #000;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 900;
     display: grid;
     grid-template-rows: 3rem 1fr;
     transition: width .3s linear;
+    overflow: hidden;
 }
 
 .backbar__logo {
@@ -44,6 +45,7 @@
     margin: .3rem 0;
     font-size: 1.7rem;
     transition: transform .2s;
+    text-align: center;
 }
 
 @media (min-width: 668px) {

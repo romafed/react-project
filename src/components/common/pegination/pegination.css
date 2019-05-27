@@ -1,21 +1,30 @@
 .pagination {
-    width: 30%;
     margin: 0.5rem 0;
     padding: 0;
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow-x: auto;
 }
 
 .pagination li {
     background-color: black;
     padding: 1rem;
+    margin-left: .2rem;
     border-radius: 10px;
     cursor: pointer;
 }
 
+.pagination li:first-child {
+    margin-left: 0;
+}
+
 .pagination li:hover {
+    color: #6E007F;
+}
+
+.paginationActive {
     color: #6E007F;
 }
 

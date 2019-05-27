@@ -2,7 +2,8 @@ import {
     ADD_SINGLE_TODO,
     TOGGLE_COMPLETE_TODO,
     FILTER_TODS_LIST,
-    DELETE_TODO
+    DELETE_TODO,
+    SEARCH_VALUE
 } from './../types';
 
 export const addTodo = text => dispatch => {
@@ -31,4 +32,11 @@ export const filterTodosList = filter => dispatch => {
         type: FILTER_TODS_LIST,
         payload: filter
     });
+}
+
+export const addValue = value => dispatch => {
+    return dispatch({
+        type: SEARCH_VALUE,
+        payload: value
+    })
 }

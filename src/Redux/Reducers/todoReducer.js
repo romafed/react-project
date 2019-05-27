@@ -5,7 +5,8 @@ import {
     TOGGLE_COMPLETE_TODO,
     FILTER_TODS_LIST,
     DELETE_TODO,
-    Filters
+    Filters,
+    SEARCH_VALUE
 } from './../types';
 
 function todos(state = [], action) {
@@ -38,9 +39,19 @@ function filterForTodos(state = Filters.ALL_TODOS, action) {
     }
 }
 
+function addValue(state = '', action) {
+    switch (action.type) {
+        case SEARCH_VALUE:
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 const todoReducer = combineReducers({
     todos,
-    filterForTodos
+    filterForTodos,
+    addValue
 });
 
 export default todoReducer;

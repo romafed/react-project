@@ -20,7 +20,7 @@ function pageNumber(state = 1, action) {
     }
 }
 
-function pageSize(state = 3, action) {
+function pageSize(state = 5, action) {
     switch (action.type) {
         case SET_PAGE_SIZE:
             return action.payload

@@ -5,7 +5,8 @@ import Tableapp from './../tableapp';
 
 const mapStateToProps = state => ({
     posts: state.tableState.posts,
-    pageSize: state.tableState.pageSize
+    pageSize: state.tableState.pageSize,
+    pageNumber: state.tableState.pageNumber
 });
 
 const mainTable = connect(
