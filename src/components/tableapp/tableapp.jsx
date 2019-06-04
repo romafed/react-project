@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getUser } from './../../http-modules/user-http';
-import TableContainer from './containers/tableContainer';
+import Table from './table/table';
 import Peginating from './../common/pegination/pegination';
 import Search from './../common/search/search';
 import './tableapp.css';
@@ -16,21 +16,33 @@ class Tableapp extends Component {
         }
     }
 
+    hendleSearch = (e) => {
+        const { searchUsers, changePage } = this.props
+        changePage(1);
+        searchUsers(e.currentTarget.value)
+    }
+
     render() {
-        const { pageSize, posts, changePage, pageNumber } = this.props;
+        const { pageSize, posts, changePage, pageNumber, usersSize, searchValue } = this.props;
         return (
             <div className="page">
                 <div className='tableapp'>
                     <div className='table-container '>
                         <Search
                             placeholder='Search...'
+                            hendleValue={this.hendleSearch}
+                            hendelSubmit={(e) => e.preventDefault()}
+                            value={searchValue}
                         >
                             <i className="fa fa-search" aria-hidden="true"></i>
                         </Search>
-                        <TableContainer />
+                        <Table
+                            posts={posts}
+                        />
                         <Peginating
+                            viseblePagesLength={posts.length}
                             pageSize={pageSize}
-                            postsLength={posts.length}
+                            postsLength={usersSize}
                             pageNumber={pageNumber}
                             onPage={changePage}
                         />

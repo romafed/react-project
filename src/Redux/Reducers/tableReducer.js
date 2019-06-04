@@ -2,13 +2,15 @@ import { combineReducers } from 'redux';
 import {
     GET_POSTS,
     SET_PAGE_SIZE,
-    CHANGE_PAGE
+    CHANGE_PAGE,
+    SEARCH_USERS,
 } from '../types';
 
 const tableReducer = combineReducers({
     posts,
     pageSize: pageSize,
-    pageNumber
+    pageNumber,
+    searchUsersValue
 });
 
 function pageNumber(state = 1, action) {
@@ -35,6 +37,15 @@ function posts(state = [], action) {
             return action.payload.splice(0, 20)
         default:
             return state;
+    }
+}
+
+function searchUsersValue(state = '', action) {
+    switch (action.type) {
+        case SEARCH_USERS:
+            return action.payload
+        default:
+            return state
     }
 }
 

@@ -17,3 +17,4 @@ export const Filters = {
 export const GET_POSTS = 'GET_POSTS';
 export const SET_PAGE_SIZE = 'SET_PAGE_SIZE';
 export const CHANGE_PAGE = 'CHANGE_PAGE';
+export const SEARCH_USERS = 'SEARCH_USERS';

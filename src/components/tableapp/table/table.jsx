@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Transition } from 'react-spring/renderprops';
+import { Transition, Spring } from 'react-spring/renderprops';
 import './table.css';
 class Table extends Component {
 
@@ -10,6 +10,16 @@ class Table extends Component {
     render() {
         const { posts } = this.props;
         const { thead } = this.state;
+
+        if (posts <= 1) return (
+            <Spring
+                from={{ opacity: 0, transform: 'translateX(-200%)' }}
+                to={{ opacity: 1, transform: 'translateX(0)' }}
+            >
+                {props => <p style={props}>Cant find user</p>}
+            </Spring>
+        );
+
         return (
             <table className='main-table'>
                 <thead>

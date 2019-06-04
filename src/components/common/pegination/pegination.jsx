@@ -1,13 +1,15 @@
 import React from 'react'
 import './pegination.css'
 
-const Peginating = ({ pageSize, postsLength, onPage, pageNumber }) => {
+const Peginating = ({ viseblePagesLength, pageSize, postsLength, onPage, pageNumber }) => {
     const pages = Math.ceil(postsLength / pageSize);
     const pagesArr = [];
 
     for (let i = 1; i <= pages; i++) {
         pagesArr.push(i);
     }
+
+    if (pagesArr.length <= 1) return null;
 
     return (
         <ul className='pagination'>

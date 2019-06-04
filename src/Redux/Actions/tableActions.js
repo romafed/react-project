@@ -1,7 +1,8 @@
 import {
     GET_POSTS,
     SET_PAGE_SIZE,
-    CHANGE_PAGE
+    CHANGE_PAGE,
+    SEARCH_USERS
 } from '../types';
 
 export const getPosts = posts => dispatch => {
@@ -24,3 +25,11 @@ export const changePage = pageNumber => dispatch => {
         payload: pageNumber
     })
 }
+
+export const searchUsers = value => dispatch => {
+    return dispatch({
+        type: SEARCH_USERS,
+        payload: value
+    });
+}
+
